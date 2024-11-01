@@ -22,7 +22,7 @@ modules:
     build-parameters:
       builder: npm
     provides:
-      - name: srv-api
+      - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
           srv-url: ${default-url}
     requires:
