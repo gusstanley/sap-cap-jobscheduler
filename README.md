@@ -100,7 +100,13 @@ annotate RootService.Books with @(restrict: [{
 This will force only the role jobscheduler to have access to the entity.
 Note that the name needs to be the same as defined in the xs-security.json file.
 
-
+#### Deployment
+```sh
+npm install
+cf login
+npx mbt build
+cf deploy mta_archives/sap-cap-jobscheduler_1.0.0.mtar 
+```
 
 Thanks,
 
