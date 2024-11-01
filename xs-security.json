@@ -1,0 +1,15 @@
+{
+  "xsappname": "$XSAPPNAME",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.jobscheduler",
+      "description": "jobscheduler scope",
+      "grant-as-authority-to-apps": [
+        "$XSSERVICENAME(jobscheduler)"
+      ]
+    }
+  ],
+  "attributes": [],
+  "role-templates": [],
+  "authorities-inheritance": false
+}
