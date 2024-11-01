@@ -44,19 +44,45 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
-
+  
+  #Option 1
   - name: jobscheduler
-    type: com.sap.xs.job-scheduler
+    type: org.cloudfoundry.managed-service
     parameters:
+      service: jobscheduler
       service-plan: standard
       config:
         enable-xsuaa-support: true
+        
+  #Option 2
+  # - name: jobscheduler
+  #   type: com.sap.xs.job-scheduler
+  #   parameters:
+  #     service-plan: standard
+  #     config:
+  #       enable-xsuaa-support: true
 
+  #Option 1
   - name: sap-cap-jobscheduler-auth
-    type: com.sap.xs.uaa
+    type: org.cloudfoundry.managed-service
     parameters:
+      service: xsuaa
       service-plan: application
       path: ./xs-security.json
       config:
         xsappname: sap-cap-jobscheduler-auth
         tenant-mode: dedicated
+
+  #Option 2
+  # - name: sap-cap-jobscheduler-auth
+  #   type: com.sap.xs.uaa
+  #   parameters:
+  #     service-plan: application
+  #     path: ./xs-security.json
+  #     config:
+  #       xsappname: sap-cap-jobscheduler-auth
+  #       tenant-mode: dedicated
+
+
+
+
